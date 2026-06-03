@@ -17,12 +17,12 @@ function setup() {
   let cnv = createCanvas(windowWidth, windowHeight);
   cnv.parent('canvas-container');
 
-  sounds[0] = new Audio('audio/01donCherryBrownRice.mp3');
-  sounds[1] = new Audio('audio/02jeanJacquesPerreyTheElephantNeverForgets.mp3');
-  sounds[2] = new Audio('audio/03cromax.wav');
-  sounds[3] = new Audio('audio/04tren.wav');
-  sounds[4] = new Audio('audio/05sueño.wav');
-  sounds[5] = new Audio('audio/06boca.wav');
+  sounds[0] = new Audio('01donCherryBrownRice.mp3');
+  sounds[1] = new Audio('02jeanJacquesPerreyTheElephantNeverForgets.mp3');
+  sounds[2] = new Audio('03cromax.wav');
+  sounds[3] = new Audio('04tren.wav');
+  sounds[4] = new Audio('05sueno.wav');
+  sounds[5] = new Audio('06boca.wav');
 
   for (let i = 0; i < NUM_BUTTONS; i++) {
     let row = Math.floor(i / 3);
