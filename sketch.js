@@ -13,16 +13,27 @@ const NUM_BUTTONS = 6;
 const BUTTON_SIZE = 70;
 const SPACING = 30;
 
+function createAudio(path, altPath) {
+  let audio = new Audio(path);
+  audio.addEventListener('error', () => {
+    if (altPath && !audio.src.includes(altPath)) {
+      audio.src = altPath;
+      audio.load();
+    }
+  });
+  return audio;
+}
+
 function setup() {
   let cnv = createCanvas(windowWidth, windowHeight);
   cnv.parent('canvas-container');
 
-  sounds[0] = new Audio('01donCherryBrownRice.mp3');
-  sounds[1] = new Audio('02jeanJacquesPerreyTheElephantNeverForgets.mp3');
-  sounds[2] = new Audio('03cromax.wav');
-  sounds[3] = new Audio('04tren.wav');
-  sounds[4] = new Audio('05sueno.wav');
-  sounds[5] = new Audio('06boca.wav');
+  sounds[0] = createAudio('01donCherryBrownRice.mp3', 'audio/01donCherryBrownRice.mp3');
+  sounds[1] = createAudio('02jeanJacquesPerreyTheElephantNeverForgets.mp3', 'audio/02jeanJacquesPerreyTheElephantNeverForgets.mp3');
+  sounds[2] = createAudio('03cromax.wav', 'audio/03cromax.wav');
+  sounds[3] = createAudio('04tren.wav', 'audio/04tren.wav');
+  sounds[4] = createAudio('05sueno.wav', 'audio/05sueno.wav');
+  sounds[5] = createAudio('06boca.wav', 'audio/06boca.wav');
 
   for (let i = 0; i < NUM_BUTTONS; i++) {
     let row = Math.floor(i / 3);
